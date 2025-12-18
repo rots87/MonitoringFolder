@@ -1,0 +1,177 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Desarrollo\\Interfaz_BMolecultar_IG\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{22F27A2A-BCD5-4CB2-BC1F-3BC973B0BC03}|Interfaz_BMolecultar_IG.csproj|C:\\Desarrollo\\Interfaz_BMolecultar_IG\\form2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{22F27A2A-BCD5-4CB2-BC1F-3BC973B0BC03}|Interfaz_BMolecultar_IG.csproj|solutionrelative:form2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{22F27A2A-BCD5-4CB2-BC1F-3BC973B0BC03}|Interfaz_BMolecultar_IG.csproj|C:\\Desarrollo\\Interfaz_BMolecultar_IG\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{22F27A2A-BCD5-4CB2-BC1F-3BC973B0BC03}|Interfaz_BMolecultar_IG.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{22F27A2A-BCD5-4CB2-BC1F-3BC973B0BC03}|Interfaz_BMolecultar_IG.csproj|c:\\desarrollo\\interfaz_bmolecultar_ig\\phanterarepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{22F27A2A-BCD5-4CB2-BC1F-3BC973B0BC03}|Interfaz_BMolecultar_IG.csproj|solutionrelative:phanterarepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{22F27A2A-BCD5-4CB2-BC1F-3BC973B0BC03}|Interfaz_BMolecultar_IG.csproj|c:\\desarrollo\\interfaz_bmolecultar_ig\\form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{22F27A2A-BCD5-4CB2-BC1F-3BC973B0BC03}|Interfaz_BMolecultar_IG.csproj|solutionrelative:form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{22F27A2A-BCD5-4CB2-BC1F-3BC973B0BC03}|Interfaz_BMolecultar_IG.csproj|c:\\desarrollo\\interfaz_bmolecultar_ig\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{22F27A2A-BCD5-4CB2-BC1F-3BC973B0BC03}|Interfaz_BMolecultar_IG.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{22F27A2A-BCD5-4CB2-BC1F-3BC973B0BC03}|Interfaz_BMolecultar_IG.csproj|c:\\desarrollo\\interfaz_bmolecultar_ig\\monitoringservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{22F27A2A-BCD5-4CB2-BC1F-3BC973B0BC03}|Interfaz_BMolecultar_IG.csproj|solutionrelative:monitoringservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{22F27A2A-BCD5-4CB2-BC1F-3BC973B0BC03}|Interfaz_BMolecultar_IG.csproj|c:\\desarrollo\\interfaz_bmolecultar_ig\\appconfigmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{22F27A2A-BCD5-4CB2-BC1F-3BC973B0BC03}|Interfaz_BMolecultar_IG.csproj|solutionrelative:appconfigmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{22F27A2A-BCD5-4CB2-BC1F-3BC973B0BC03}|Interfaz_BMolecultar_IG.csproj|c:\\desarrollo\\interfaz_bmolecultar_ig\\sqldataaccess.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{22F27A2A-BCD5-4CB2-BC1F-3BC973B0BC03}|Interfaz_BMolecultar_IG.csproj|solutionrelative:sqldataaccess.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{22F27A2A-BCD5-4CB2-BC1F-3BC973B0BC03}|Interfaz_BMolecultar_IG.csproj|c:\\desarrollo\\interfaz_bmolecultar_ig\\form2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{22F27A2A-BCD5-4CB2-BC1F-3BC973B0BC03}|Interfaz_BMolecultar_IG.csproj|solutionrelative:form2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Form1.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Desarrollo\\Interfaz_BMolecultar_IG\\Form1.cs",
+              "RelativeDocumentMoniker": "Form1.cs",
+              "ToolTip": "C:\\Desarrollo\\Interfaz_BMolecultar_IG\\Form1.cs [Dise\u00F1o]",
+              "RelativeToolTip": "Form1.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-12T16:43:25.098Z",
+              "IsPinned": true,
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Form2.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Desarrollo\\Interfaz_BMolecultar_IG\\Form2.cs",
+              "RelativeDocumentMoniker": "Form2.cs",
+              "ToolTip": "C:\\Desarrollo\\Interfaz_BMolecultar_IG\\Form2.cs [Dise\u00F1o]",
+              "RelativeToolTip": "Form2.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-12T19:14:53.872Z",
+              "IsPinned": true,
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Form1.Designer.cs",
+              "DocumentMoniker": "C:\\Desarrollo\\Interfaz_BMolecultar_IG\\Form1.Designer.cs",
+              "RelativeDocumentMoniker": "Form1.Designer.cs",
+              "ToolTip": "C:\\Desarrollo\\Interfaz_BMolecultar_IG\\Form1.Designer.cs",
+              "RelativeToolTip": "Form1.Designer.cs",
+              "ViewState": "AgIAACAAAAAAAAAAAAASwDMAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-12T21:34:22.584Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Form1.cs",
+              "DocumentMoniker": "C:\\Desarrollo\\Interfaz_BMolecultar_IG\\Form1.cs",
+              "RelativeDocumentMoniker": "Form1.cs",
+              "ToolTip": "C:\\Desarrollo\\Interfaz_BMolecultar_IG\\Form1.cs",
+              "RelativeToolTip": "Form1.cs",
+              "ViewState": "AgIAACIAAAAAAAAAAAAAwOMAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-12T21:33:43.722Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "MonitoringService.cs",
+              "DocumentMoniker": "C:\\Desarrollo\\Interfaz_BMolecultar_IG\\MonitoringService.cs",
+              "RelativeDocumentMoniker": "MonitoringService.cs",
+              "ToolTip": "C:\\Desarrollo\\Interfaz_BMolecultar_IG\\MonitoringService.cs",
+              "RelativeToolTip": "MonitoringService.cs",
+              "ViewState": "AgIAAH0AAAAAAAAAAAAiwJIAAABCAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-12T21:28:28.803Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "AppConfigModel.cs",
+              "DocumentMoniker": "C:\\Desarrollo\\Interfaz_BMolecultar_IG\\AppConfigModel.cs",
+              "RelativeDocumentMoniker": "AppConfigModel.cs",
+              "ToolTip": "C:\\Desarrollo\\Interfaz_BMolecultar_IG\\AppConfigModel.cs",
+              "RelativeToolTip": "AppConfigModel.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAxwBsAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-12T19:32:22.959Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "PhanteraRepository.cs",
+              "DocumentMoniker": "C:\\Desarrollo\\Interfaz_BMolecultar_IG\\PhanteraRepository.cs",
+              "RelativeDocumentMoniker": "PhanteraRepository.cs",
+              "ToolTip": "C:\\Desarrollo\\Interfaz_BMolecultar_IG\\PhanteraRepository.cs",
+              "RelativeToolTip": "PhanteraRepository.cs",
+              "ViewState": "AgIAAE0AAAAAAAAAAAAIwFwAAABCAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-12T19:34:15.785Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "SqlDataAccess.cs",
+              "DocumentMoniker": "C:\\Desarrollo\\Interfaz_BMolecultar_IG\\SqlDataAccess.cs",
+              "RelativeDocumentMoniker": "SqlDataAccess.cs",
+              "ToolTip": "C:\\Desarrollo\\Interfaz_BMolecultar_IG\\SqlDataAccess.cs",
+              "RelativeToolTip": "SqlDataAccess.cs",
+              "ViewState": "AgIAACAAAAAAAAAAAAAiwEcAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-12T19:33:32.217Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Form2.cs",
+              "DocumentMoniker": "C:\\Desarrollo\\Interfaz_BMolecultar_IG\\Form2.cs",
+              "RelativeDocumentMoniker": "Form2.cs",
+              "ToolTip": "C:\\Desarrollo\\Interfaz_BMolecultar_IG\\Form2.cs",
+              "RelativeToolTip": "Form2.cs",
+              "ViewState": "AgIAAHUAAAAAAAAAAAAowMAAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-12T19:07:53.963Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
