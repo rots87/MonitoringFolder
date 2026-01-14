@@ -62,17 +62,15 @@ El proyecto sigue una arquitectura modular con **Separación de Responsabilidade
 
 ## ⚖️ Licencia
 
-Este proyecto está licenciado bajo la **Apache License 3.0**. Consulta el archivo [LICENSE](LICENSE) para más detalles.
+Este proyecto es software libre: puedes redistribuirlo y/o modificarlo bajo los términos de la **GNU General Public License** publicada por la Free Software Foundation, ya sea la versión 3 de la Licencia, o (a tu elección) cualquier versión posterior.
 
-### Resumen de permisos:
-* ✅ Uso comercial
-* ✅ Modificación
-* ✅ Distribución
-* ✅ Uso privado
+Consulta el archivo [LICENSE](LICENSE) para más detalles.
 
-### Condiciones:
-* ℹ️ Incluir copia de la licencia y copyright.
-* ℹ️ Indicar cambios realizados en el código.
+### Resumen de derechos y obligaciones (GPLv3):
+* ✅ **Permisos:** Uso comercial, modificación, distribución y uso de patentes.
+* 🔄 **Condición Clave (Copyleft):** Si distribuyes este software o una versión modificada, **debes liberar el código fuente** bajo la misma licencia (GPLv3). No puedes cerrar el código.
+* ℹ️ **Aviso:** Debes mantener los avisos de derechos de autor y licencia.
+* 🛡️ **Sin Garantía:** El software se entrega "tal cual".
 
 ---
 *Desarrollado por [Nestor Cañas / Rots87](https://github.com/rots87)*
