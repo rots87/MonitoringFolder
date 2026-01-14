@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Interfaz_BMolecultar_IG")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c3a333615bb066a3ed1121951142cceeaf6f2187")]
 [assembly: System.Reflection.AssemblyProductAttribute("Interfaz_BMolecultar_IG")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Interfaz_BMolecultar_IG")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

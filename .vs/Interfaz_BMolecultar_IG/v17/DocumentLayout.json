@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Desarrollo\\Interfaz_BMolecultar_IG\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{22F27A2A-BCD5-4CB2-BC1F-3BC973B0BC03}|Interfaz_BMolecultar_IG.csproj|c:\\desarrollo\\interfaz_bmolecultar_ig\\monitoringservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{22F27A2A-BCD5-4CB2-BC1F-3BC973B0BC03}|Interfaz_BMolecultar_IG.csproj|solutionrelative:monitoringservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{22F27A2A-BCD5-4CB2-BC1F-3BC973B0BC03}|Interfaz_BMolecultar_IG.csproj|C:\\Desarrollo\\Interfaz_BMolecultar_IG\\form2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{22F27A2A-BCD5-4CB2-BC1F-3BC973B0BC03}|Interfaz_BMolecultar_IG.csproj|solutionrelative:form2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
@@ -21,10 +25,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{22F27A2A-BCD5-4CB2-BC1F-3BC973B0BC03}|Interfaz_BMolecultar_IG.csproj|c:\\desarrollo\\interfaz_bmolecultar_ig\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{22F27A2A-BCD5-4CB2-BC1F-3BC973B0BC03}|Interfaz_BMolecultar_IG.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{22F27A2A-BCD5-4CB2-BC1F-3BC973B0BC03}|Interfaz_BMolecultar_IG.csproj|c:\\desarrollo\\interfaz_bmolecultar_ig\\monitoringservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{22F27A2A-BCD5-4CB2-BC1F-3BC973B0BC03}|Interfaz_BMolecultar_IG.csproj|solutionrelative:monitoringservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{22F27A2A-BCD5-4CB2-BC1F-3BC973B0BC03}|Interfaz_BMolecultar_IG.csproj|c:\\desarrollo\\interfaz_bmolecultar_ig\\appconfigmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -46,11 +46,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Form1.cs [Dise\u00F1o]",
               "DocumentMoniker": "C:\\Desarrollo\\Interfaz_BMolecultar_IG\\Form1.cs",
               "RelativeDocumentMoniker": "Form1.cs",
@@ -58,12 +58,11 @@
               "RelativeToolTip": "Form1.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-12-12T16:43:25.098Z",
-              "IsPinned": true,
-              "EditorCaption": " [Dise\u00F1o]"
+              "IsPinned": true
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Form2.cs [Dise\u00F1o]",
               "DocumentMoniker": "C:\\Desarrollo\\Interfaz_BMolecultar_IG\\Form2.cs",
               "RelativeDocumentMoniker": "Form2.cs",
@@ -71,8 +70,7 @@
               "RelativeToolTip": "Form2.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-12-12T19:14:53.872Z",
-              "IsPinned": true,
-              "EditorCaption": " [Dise\u00F1o]"
+              "IsPinned": true
             },
             {
               "$type": "Bookmark",
@@ -80,7 +78,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "Form1.Designer.cs",
               "DocumentMoniker": "C:\\Desarrollo\\Interfaz_BMolecultar_IG\\Form1.Designer.cs",
               "RelativeDocumentMoniker": "Form1.Designer.cs",
@@ -88,12 +86,11 @@
               "RelativeToolTip": "Form1.Designer.cs",
               "ViewState": "AgIAACAAAAAAAAAAAAASwDMAAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-12T21:34:22.584Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-12T21:34:22.584Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "Form1.cs",
               "DocumentMoniker": "C:\\Desarrollo\\Interfaz_BMolecultar_IG\\Form1.cs",
               "RelativeDocumentMoniker": "Form1.cs",
@@ -101,18 +98,17 @@
               "RelativeToolTip": "Form1.cs",
               "ViewState": "AgIAACIAAAAAAAAAAAAAwOMAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-12T21:33:43.722Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-12T21:33:43.722Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 0,
               "Title": "MonitoringService.cs",
               "DocumentMoniker": "C:\\Desarrollo\\Interfaz_BMolecultar_IG\\MonitoringService.cs",
               "RelativeDocumentMoniker": "MonitoringService.cs",
               "ToolTip": "C:\\Desarrollo\\Interfaz_BMolecultar_IG\\MonitoringService.cs",
               "RelativeToolTip": "MonitoringService.cs",
-              "ViewState": "AgIAAH0AAAAAAAAAAAAiwJIAAABCAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUBAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-12-12T21:28:28.803Z",
               "EditorCaption": ""
@@ -127,12 +123,11 @@
               "RelativeToolTip": "AppConfigModel.cs",
               "ViewState": "AgIAAAgAAAAAAAAAAAAxwBsAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-12T19:32:22.959Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-12T19:32:22.959Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "PhanteraRepository.cs",
               "DocumentMoniker": "C:\\Desarrollo\\Interfaz_BMolecultar_IG\\PhanteraRepository.cs",
               "RelativeDocumentMoniker": "PhanteraRepository.cs",
@@ -140,8 +135,7 @@
               "RelativeToolTip": "PhanteraRepository.cs",
               "ViewState": "AgIAAE0AAAAAAAAAAAAIwFwAAABCAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-12T19:34:15.785Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-12T19:34:15.785Z"
             },
             {
               "$type": "Document",
@@ -153,8 +147,7 @@
               "RelativeToolTip": "SqlDataAccess.cs",
               "ViewState": "AgIAACAAAAAAAAAAAAAiwEcAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-12T19:33:32.217Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-12T19:33:32.217Z"
             },
             {
               "$type": "Document",
@@ -166,8 +159,7 @@
               "RelativeToolTip": "Form2.cs",
               "ViewState": "AgIAAHUAAAAAAAAAAAAowMAAAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-12T19:07:53.963Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-12T19:07:53.963Z"
             }
           ]
         }

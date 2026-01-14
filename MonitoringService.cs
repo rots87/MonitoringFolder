@@ -1,18 +1,19 @@
 ﻿using System;
+using System.Collections.Generic; // Para Dictionary
 using System.IO;
+using System.Linq; // Para Select y Skip
 using System.Threading;
+using System.Globalization; // Para leer decimales
 
 namespace Interfaz_BMolecultar_IG
 {
     public class MonitoringService
     {
-        // ... (Variables existentes) ...
         private FileSystemWatcher _watcher;
         private readonly AppConfigModel _config;
         private bool _isRunning = false;
 
-        // 1. NUEVO EVENTO: Para comunicar al MainForm qué archivo se está tocando
-        // El string será el nombre del archivo.
+        // Evento para notificar a la UI
         public event Action<string> OnProcesando;
 
         public MonitoringService(AppConfigModel config)
@@ -20,17 +21,10 @@ namespace Interfaz_BMolecultar_IG
             _config = config;
         }
 
-        // ... (Métodos StartMonitoring y StopMonitoring quedan IGUALES) ...
-        // ... (Solo asegúrate de que copias el resto del código que ya tenías) ...
-
-        // Aquí pongo las partes que no cambian resumidas para no llenar la pantalla, 
-        // PERO el cambio importante está en ProcesarArchivo:
-
         public bool IsRunning => _isRunning;
 
         public void StartMonitoring()
         {
-            // ... (Tu código de StartMonitoring igual que antes) ...
             if (_isRunning) return;
             if (string.IsNullOrWhiteSpace(_config.RutaCarpetaCSV) || !Directory.Exists(_config.RutaCarpetaCSV))
             {
@@ -40,18 +34,19 @@ namespace Interfaz_BMolecultar_IG
 
             try
             {
-                // Barrido Inicial
-                foreach (string archivo in Directory.GetFiles(_config.RutaCarpetaCSV, "*.csv"))
+                // Barrido Inicial (Archivos .tsv)
+                foreach (string archivo in Directory.GetFiles(_config.RutaCarpetaCSV, "*.tsv"))
                 {
                     ProcesarArchivo(archivo);
                 }
 
-                _watcher = new FileSystemWatcher(_config.RutaCarpetaCSV, "*.csv");
+                // Vigilancia Tiempo Real (.tsv)
+                _watcher = new FileSystemWatcher(_config.RutaCarpetaCSV, "*.tsv");
                 _watcher.Created += (s, e) => ProcesarArchivo(e.FullPath);
                 _watcher.EnableRaisingEvents = true;
                 _isRunning = true;
 
-                AppLogger.LogInformation($"Servicio ACTIVO. Vigilando: {_config.RutaCarpetaCSV}");
+                AppLogger.LogInformation($"Servicio ACTIVO. Vigilando archivos TSV en: {_config.RutaCarpetaCSV}");
             }
             catch (Exception ex)
             {
@@ -62,7 +57,6 @@ namespace Interfaz_BMolecultar_IG
 
         public void StopMonitoring()
         {
-            // ... (Tu código de StopMonitoring igual que antes) ...
             if (_watcher != null)
             {
                 _watcher.EnableRaisingEvents = false;
@@ -75,10 +69,8 @@ namespace Interfaz_BMolecultar_IG
 
         private void ProcesarArchivo(string rutaArchivo)
         {
-            // 2. DISPARAR EVENTO (INICIO)
-            // Avisamos al MainForm que empezamos.
             string nombreArchivo = Path.GetFileName(rutaArchivo);
-            OnProcesando?.Invoke(nombreArchivo);
+            OnProcesando?.Invoke(nombreArchivo); // Notificar UI
 
             Thread.Sleep(500);
             bool moverAProcesados = false;
@@ -92,68 +84,173 @@ namespace Interfaz_BMolecultar_IG
                 PhanteraRepository repo = new PhanteraRepository(_config);
                 string[] lineas = File.ReadAllLines(rutaArchivo);
 
-                if (lineas.Length > 0)
+                if (lineas.Length > 1) // Encabezado + Datos
                 {
-                    foreach (string linea in lineas)
-                    {
-                        // ... (Toda tu lógica de procesamiento que hicimos en el paso anterior) ...
-                        // ... (Copiar y pegar la lógica del foreach, split, repo.ActualizarResultado, etc.) ...
+                    // ---------------------------------------------------------
+                    // 1. MAPEO DINÁMICO DE COLUMNAS
+                    // ---------------------------------------------------------
+                    // Leemos encabezados y limpiamos comillas
+                    string[] headers = lineas[0].Split('\t').Select(h => h.Trim('"').Trim()).ToArray();
 
-                        if (string.IsNullOrWhiteSpace(linea)) continue;
-                        totalLeidos++;
-                        string[] partes = linea.Split(',');
-                        if (partes.Length < 2) continue;
-                        string codigoBarras = partes[0].Trim();
-                        string resultado = partes[1].Trim();
-                        int? ordenId = repo.BuscarOrdenPorCodigoBarras(codigoBarras);
-                        if (ordenId.HasValue)
+                    Dictionary<string, int> mapaColumnas = new Dictionary<string, int>();
+                    for (int i = 0; i < headers.Length; i++)
+                    {
+                        if (!mapaColumnas.ContainsKey(headers[i]))
+                            mapaColumnas.Add(headers[i], i);
+                    }
+
+                    // Validamos COLUMNAS REQUERIDAS (Agregamos SampleType)
+                    if (!mapaColumnas.ContainsKey("SampleID") ||
+                        !mapaColumnas.ContainsKey("Channel") ||
+                        !mapaColumnas.ContainsKey("SampleType") ||  // <--- NUEVA VALIDACIÓN
+                        !mapaColumnas.ContainsKey("LR_Ct_NonNormalized"))
+                    {
+                        AppLogger.LogError(null, $"El archivo {nombreArchivo} no tiene las columnas requeridas (SampleID, Channel, SampleType, LR_Ct_NonNormalized).");
+                        moverAProcesados = false;
+                    }
+                    else
+                    {
+                        // Indices detectados
+                        int idxSample = mapaColumnas["SampleID"];
+                        int idxChannel = mapaColumnas["Channel"];
+                        int idxSampleType = mapaColumnas["SampleType"]; // <--- NUEVO ÍNDICE
+                        int idxResult = mapaColumnas["LR_Ct_NonNormalized"];
+
+                        // ---------------------------------------------------------
+                        // 2. PROCESAMIENTO DE FILAS
+                        // ---------------------------------------------------------
+                        for (int i = 1; i < lineas.Length; i++)
                         {
-                            bool actualizado = repo.ActualizarResultado(ordenId.Value, resultado);
-                            if (actualizado) { totalActualizados++; moverAProcesados = true; }
-                            else { AppLogger.LogWarning($"[OMITIDO] {codigoBarras}: Prueba no pedida."); totalErrores++; moverAProcesados = true; }
-                        }
-                        else { AppLogger.LogWarning($"[NO ENCONTRADA] {codigoBarras}: No existe orden."); totalErrores++; }
-                    }
+                            string linea = lineas[i];
+                            if (string.IsNullOrWhiteSpace(linea)) continue;
 
-                    // Reporte Resumen
-                    if (totalActualizados > 0)
-                    {
-                        if (totalErrores == 0) AppLogger.LogInformation($"[CARGA EXITOSA] {nombreArchivo}: {totalActualizados} actualizados.");
-                        else AppLogger.LogWarning($"[CARGA PARCIAL] {nombreArchivo}: {totalActualizados} OK, {totalErrores} Alertas.");
+                            string[] celdas = linea.Split('\t');
+                            if (celdas.Length < headers.Length) continue;
+
+                            // LIMPIEZA DE DATOS
+                            string sampleId = celdas[idxSample].Trim('"').Trim();
+                            string channel = celdas[idxChannel].Trim('"').Trim();
+                            string sampleType = celdas[idxSampleType].Trim('"').Trim(); // <--- LEER TIPO
+                            string rawResult = celdas[idxResult].Trim('"').Trim();
+
+                            // --- FILTROS DE NEGOCIO ---
+
+                            // 1. Solo procesar si es PACIENTE REAL (Specimen)
+                            // Usamos ToUpper para evitar problemas si viene "specimen" o "Specimen"
+                            if (sampleType.ToUpper() != "SPECIMEN")
+                            {
+                                continue; // Ignoramos Controles, Blancos, etc.
+                            }
+
+                            // 2. Solo procesar canal FAM
+                            if (channel.ToUpper() != "FAM")
+                            {
+                                continue; // Ignoramos otros canales
+                            }
+
+                            totalLeidos++;
+
+                            // --- LÓGICA DE RESULTADO (GBS) ---
+                            string resultadoFinal = "INDETERMINADO";
+
+                            if (rawResult.ToLower() == "nc")
+                            {
+                                resultadoFinal = "NEGATIVO";
+                            }
+                            else
+                            {
+                                if (double.TryParse(rawResult, NumberStyles.Any, CultureInfo.InvariantCulture, out double ctValue))
+                                {
+                                    if (ctValue < 40.0)
+                                        resultadoFinal = "POSITIVO";
+                                    else
+                                        resultadoFinal = "NEGATIVO";
+                                }
+                                else
+                                {
+                                    AppLogger.LogWarning($"[DATO INVÁLIDO] Muestra {sampleId}: Valor '{rawResult}' no numérico.");
+                                    totalErrores++;
+                                    continue;
+                                }
+                            }
+
+                            // --- INTERACCIÓN SQL ---
+                            int? ordenId = repo.BuscarOrdenPorCodigoBarras(sampleId);
+
+                            if (ordenId.HasValue)
+                            {
+                                bool actualizado = repo.ActualizarResultado(ordenId.Value, resultadoFinal);
+
+                                if (actualizado)
+                                {
+                                    totalActualizados++;
+                                    moverAProcesados = true;
+                                }
+                                else
+                                {
+                                    AppLogger.LogWarning($"[OMITIDO] Muestra {sampleId}: Prueba GBS no solicitada.");
+                                    totalErrores++;
+                                    moverAProcesados = true;
+                                }
+                            }
+                            else
+                            {
+                                AppLogger.LogWarning($"[NO ENCONTRADA] Muestra {sampleId}: No existe orden en SQL.");
+                                totalErrores++;
+                            }
+                        }
+
+                        // REPORTE RESUMEN
+                        if (totalActualizados > 0)
+                        {
+                            string msg = totalErrores == 0
+                                ? $"[CARGA EXITOSA] {nombreArchivo}: {totalActualizados} pacientes actualizados."
+                                : $"[CARGA PARCIAL] {nombreArchivo}: {totalActualizados} OK, {totalErrores} Alertas.";
+
+                            if (totalErrores == 0) AppLogger.LogInformation(msg); else AppLogger.LogWarning(msg);
+                        }
+                        else if (totalErrores > 0)
+                        {
+                            AppLogger.LogError(null, $"[CARGA FALLIDA] {nombreArchivo}: 0 cargados, {totalErrores} errores.");
+                        }
+                        else if (totalLeidos == 0)
+                        {
+                            // Si leímos el archivo pero no encontramos ningún "FAM" + "Specimen"
+                            AppLogger.LogInformation($"[INFO] Archivo {nombreArchivo} procesado (Solo contenía Controles o canales no válidos).");
+                            moverAProcesados = true;
+                        }
                     }
-                    else if (totalErrores > 0) AppLogger.LogError(null, $"[CARGA FALLIDA] {nombreArchivo}: 0 OK, {totalErrores} errores.");
                 }
                 else
                 {
-                    AppLogger.LogWarning($"Archivo vacío: {nombreArchivo}");
+                    AppLogger.LogWarning($"Archivo vacío o sin encabezados: {nombreArchivo}");
                     moverAProcesados = true;
                 }
             }
             catch (Exception ex)
             {
-                AppLogger.LogError(ex, $"Error procesando {nombreArchivo}");
+                AppLogger.LogError(ex, $"Error crítico procesando {nombreArchivo}");
                 moverAProcesados = false;
             }
             finally
             {
-                MoverArchivo(rutaArchivo, moverAProcesados);
-
-                // 3. DISPARAR EVENTO (FIN)
-                // Enviamos null para indicar que ya terminamos y estamos libres.
                 OnProcesando?.Invoke(null);
+                MoverArchivo(rutaArchivo, moverAProcesados);
             }
         }
 
         private void MoverArchivo(string rutaOriginal, bool exito)
         {
-            // ... (Tu código de MoverArchivo igual que antes) ...
             try
             {
                 FileInfo fi = new FileInfo(rutaOriginal);
                 string carpeta = Path.Combine(fi.DirectoryName, exito ? "Procesados" : "Errores");
+
                 if (!Directory.Exists(carpeta)) Directory.CreateDirectory(carpeta);
+
                 string destino = Path.Combine(carpeta, fi.Name);
                 if (File.Exists(destino)) File.Delete(destino);
+
                 File.Move(rutaOriginal, destino);
             }
             catch (Exception ex)
